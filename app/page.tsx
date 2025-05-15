@@ -1,11 +1,14 @@
-import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
-import { Welcome } from '../components/Welcome/Welcome';
+'use client';
+import { ContextScreen } from '@/components/ContextScreen/ContextScreen';
+import { Sidebar } from '@/components/Sidebar/Sidebar';
+import { Group, useMantineTheme } from '@mantine/core';
 
 export default function HomePage() {
+  const theme = useMantineTheme();
   return (
-    <>
-      <Welcome />
-      <ColorSchemeToggle />
-    </>
+    <Group grow preventGrowOverflow={false} wrap="nowrap" bg={theme.colors.dark[0]}>
+      <Sidebar />
+      <ContextScreen />
+    </Group>
   );
 }
